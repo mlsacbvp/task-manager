@@ -39,5 +39,8 @@
 .btn {
     width: 100px;
     border-radius: 10px;
+    padding: 5px;
     margin-top: 20px;
+    text-transform: uppercase;
+    background-color: grey;
 }
