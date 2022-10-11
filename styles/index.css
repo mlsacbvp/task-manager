@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.containerr {
+    display: flex;
+    flex-direction: column;
+    /* width: 33%; */
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.new-task {
+    background-color: rgb(84, 98, 93);
+    width: 300px;
+    /* height: 100px; */
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: larger;
+    margin: 5px;
+}
+
+.btn {
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
