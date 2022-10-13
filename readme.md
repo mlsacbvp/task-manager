@@ -33,7 +33,7 @@ Now clone the forked repository to your machine. Go to your GitHub account, open
 Open a terminal and run the following git command:
 
 ```bash
-git clone https://github.com/mlsacbvp/quiz-webapp-client
+git clone https://github.com/mlsacbvp/task-manager
 ```
 
 ### **Step 2:** Go to issues tab
