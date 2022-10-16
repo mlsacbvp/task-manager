@@ -13,10 +13,16 @@ body{
     flex-direction: row;
 }
 
+.sub-heading1{
+    font-size: 2rem;
+}
+
 .container {
     color: white;
     font-family: 'Public Sans', sans-serif;
     display: flex;
+    justify-content: space-between;
+    height: fit-content;
     flex-direction: column;
     margin: 41px;
     width: 34%;
@@ -26,7 +32,6 @@ body{
     background-color: white;
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -36,13 +41,13 @@ body{
     background-color: #2482f5;
     font-family: 'Public Sans', sans-serif;
     font-weight: 400;
+    font-size: small;
     width: 90%;
     /* height: 100px; */
     list-style: none;
     margin: auto;
     border-radius: 10px;
     padding: 10px;
-    font-size: large;
     margin: 5px;
 }
 
