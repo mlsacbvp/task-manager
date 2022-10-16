@@ -1,0 +1,24 @@
+footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem 0;
+    color: white;
+    background-image: linear-gradient(#0072ff, #0160d4 , #00408f);
+
+    font-size: smaller;
+}
+
+footer a {
+    text-decoration: none;
+    color: darkblue;
+    /* transition: color 0.3s; */
+}
+
+/*
+footer a:hover {
+    color: darkblue;
+}
+*/
