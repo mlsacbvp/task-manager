@@ -75,7 +75,7 @@ function addNewItem() {
     document.querySelector('.input').value = '';
     var li = document.createElement('div');
     var attr = document.createAttribute('draggable');
-    var ul = document.querySelector('div');
+    var ul = document.querySelector('.containerr');
     li.className = 'new-task';
     attr.value = 'true';
     li.setAttributeNode(attr);
