@@ -73,9 +73,9 @@ function addNewItem() {
   var newItem = document.querySelector('.input').value;
   if (newItem != '') {
     document.querySelector('.input').value = '';
-    var li = document.createElement('li');
+    var li = document.createElement('div');
     var attr = document.createAttribute('draggable');
-    var ul = document.querySelector('ul');
+    var ul = document.querySelector('div');
     li.className = 'new-task';
     attr.value = 'true';
     li.setAttributeNode(attr);

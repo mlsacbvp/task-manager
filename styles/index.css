@@ -4,10 +4,25 @@
     padding: 0;
     /* overflow: hidden; */
 }
+
+
+::-webkit-scrollbar{
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #0073ffeb;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track{
+    margin: 12px;
+}
+
+
 body{
     /* background-color: #0073ffeb; */
-    background: rgb(24,0,245);
-    background: linear-gradient(90deg, rgba(24,0,245,1) 0%, rgba(5,95,184,1) 50%, rgba(0,115,255,1) 100%);
+    background: rgb(32, 17, 173);
+    background: linear-gradient(90deg, rgba(0, 5, 86,1) 0%, rgba(2,55,156,1) 50%, rgba(35,161,233,1) 100%);
     font-family: Quicksand, poppins, Arial, Helvetica, sans-serif;
 }
 
@@ -22,7 +37,8 @@ body{
 }
 
 .container {
-    color: white; display: flex;
+    color: white; 
+    display: flex;
     justify-content: space-between;
     height: fit-content;
     flex-direction: column;
@@ -33,20 +49,24 @@ body{
 .containerr {
     background-color: white;
     display: flex;
+    height: 40vh;
+    overflow-y: hidden;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-   
+}
+
+.containerr:hover{
+    overflow-y: scroll;
 }
 
 .new-task {
     background-color: #2482f5;
     font-weight: 400;
     font-size: small;
-    width: 100%;
+    width: 95%;
     /* height: 100px; */
     list-style: none;
     /* margin: auto; */
