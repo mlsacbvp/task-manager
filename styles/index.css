@@ -152,8 +152,11 @@ body {
     transition: 0.5s;
 }
 
-.input:hover {
+.adder:hover {
     transform: scale(1.1);
+}
+.add:hover{
+    transform: rotate(90deg);
 }
 
 .input:focus {
