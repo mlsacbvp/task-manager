@@ -90,6 +90,10 @@ body {
 
 }
 
+.dragging {
+    opacity: 0.5;
+}
+
 /* .btn {
     width: 100px;
     border-radius: 10px;
