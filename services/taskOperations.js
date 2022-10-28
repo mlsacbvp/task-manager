@@ -64,16 +64,6 @@ export function showItems(){
         containers[0].appendChild(div);
     });
 
-    doneTasks.map(task => {
-        const div = document.createElement('div');
-        var attr = document.createAttribute('draggable');
-        div.className = 'new-task';
-        attr.value = 'true';
-        div.setAttributeNode(attr);
-        div.appendChild(document.createTextNode(task));
-        containers[1].appendChild(div);
-    });
-
     pendingTasks.map(task => {
         const div = document.createElement('div');
         var attr = document.createAttribute('draggable')
@@ -81,14 +71,28 @@ export function showItems(){
         attr.value = 'true';
         div.setAttributeNode(attr);
         div.appendChild(document.createTextNode(task));
+        containers[1].appendChild(div);
+    });
+
+    doneTasks.map(task => {
+        const div = document.createElement('div');
+        var attr = document.createAttribute('draggable');
+        div.className = 'new-task';
+        attr.value = 'true';
+        div.setAttributeNode(attr);
+        div.appendChild(document.createTextNode(task));
         containers[2].appendChild(div);
     });
+
     dragTasks();
 }
 
 export function dragTasks(){
     const draggableTasks = document.querySelectorAll('.new-task');
-    const containers = document.querySelectorAll('.containerr');
+    const doing = document.querySelector('#doing');
+    const pending = document.querySelector('#pending');
+    const done = document.querySelector('#done');
+    // const containers = document.querySelectorAll('.containerr');
     
     draggableTasks.forEach(draggable => {
         draggable.addEventListener('dragstart', () => {
@@ -99,10 +103,51 @@ export function dragTasks(){
         });
     });
     
-    containers.forEach(container => {
-        container.addEventListener('dragover', () => {
-            const draggedElement = document.querySelector('.dragging');
-            container.appendChild(draggedElement);
-        });
+    // containers.forEach(container => {
+    //     container.addEventListener('dragover', () => {
+    //         const draggedElement = document.querySelector('.dragging');
+    //         container.appendChild(draggedElement);
+    //     });
+    // });
+
+    doing.addEventListener('dragover', () => {
+        const draggedElement = document.querySelector('.dragging');
+        if (pendingTasks.includes(draggedElement.innerText)) {
+            const index = pendingTasks.indexOf(draggedElement.innerText);
+            doingTasks.push(draggedElement.innerText);
+            pendingTasks.splice(index, 1);
+        } else if (doneTasks.includes(draggedElement.innerText)) {
+            const index = doneTasks.indexOf(draggedElement.innerText);
+            doingTasks.push(draggedElement.innerText);
+            doneTasks.splice(index, 1);
+        }
+        doing.appendChild(draggedElement);
+    });
+
+    pending.addEventListener('dragover', () => {
+        const draggedElement = document.querySelector('.dragging');
+        if (doingTasks.includes(draggedElement.innerText)) {
+            const index = doingTasks.indexOf(draggedElement.innerText);
+            pendingTasks.push(draggedElement.innerText);
+            doingTasks.splice(index, 1);
+        } else if (doneTasks.includes(draggedElement.innerText)) {
+            const index = doneTasks.indexOf(draggedElement.innerText);
+            pendingTasks.push(draggedElement.innerText);
+            doneTasks.splice(index, 1);
+        }
+        pending.appendChild(draggedElement);
+    });
+    done.addEventListener('dragover', () => {
+        const draggedElement = document.querySelector('.dragging');
+        if (doingTasks.includes(draggedElement.innerText)) {
+            const index = doingTasks.indexOf(draggedElement.innerText);
+            doneTasks.push(draggedElement.innerText);
+            doingTasks.splice(index, 1);
+        } else if (pendingTasks.includes(draggedElement.innerText)) {
+            const index = pendingTasks.indexOf(draggedElement.innerText);
+            doneTasks.push(draggedElement.innerText);
+            pendingTasks.splice(index, 1);
+        }
+        done.appendChild(draggedElement);
     });
 }
