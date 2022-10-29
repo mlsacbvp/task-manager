@@ -44,9 +44,7 @@ body {
 }
 
 .sub-heading1:hover {
-    transform: scale(1.1);
-    text-decoration: underline;
-
+    transform: scale(1.05);
 }
 
 .container {
