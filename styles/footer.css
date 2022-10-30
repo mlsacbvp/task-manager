@@ -29,7 +29,9 @@ footer a:hover {
     text-decoration: none;
   }
 
-
+.bi:hover{
+    color: white;
+}
 /*
 footer a:hover {
     color: darkblue;
